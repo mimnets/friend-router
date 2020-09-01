@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
+import Friend from './components/Friend/Friend';
 
 function App() {
   const [friends, setFriends] = useState([])
@@ -14,6 +15,9 @@ function App() {
   return (
     <div>
       <h1>Friends {friends.length}</h1>
+      {
+        friends.map(friend => <Friend friend = {friend}></Friend>)
+      }
     </div>
   );
 }
